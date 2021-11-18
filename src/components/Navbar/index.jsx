@@ -42,7 +42,7 @@ export function NavBar() {
             <span></span>
           </div>
         </button>
-        <span className="dataUser">
+        <div className="dataUser">
           <p>{userMetadata.user_name}</p>
           <a
             target="_blank"
@@ -56,7 +56,7 @@ export function NavBar() {
               alt={userMetadata.user_name}
             />
           </a>
-        </span>
+        </div>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -67,6 +67,14 @@ export function NavBar() {
                   to="/home"
                 >
                   Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={collapse ? "nav-link text" : "nav-link"}
+                  to="/pesquisar"
+                >
+                  Pesquisar
                 </Link>
               </li>
             </>
