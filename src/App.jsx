@@ -1,14 +1,8 @@
-import { Login } from "./components/Login";
-import { RepositoryList } from "./components/RepositoryList";
 import "./global.scss";
+import Routes from "./Routes";
 
 function App() {
-  return (
-    <>
-      <Login />
-      {/* <RepositoryList /> */}
-    </>
-  );
+  return <Routes />;
 }
 
 export default App;
