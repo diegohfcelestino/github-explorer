@@ -43,19 +43,18 @@ export function NavBar() {
           </div>
         </button>
         <div className="dataUser">
-          <p>{userMetadata.user_name}</p>
           <a
             target="_blank"
             rel="noreferrer"
             href={`https://github.com/${userMetadata.user_name}`}
           >
-            {" "}
-            <img
-              className="navbar-brand"
-              src={userMetadata.avatar_url}
-              alt={userMetadata.user_name}
-            />
+            <p>{userMetadata.user_name}</p>
           </a>
+          <img
+            className="navbar-brand"
+            src={userMetadata.avatar_url}
+            alt={userMetadata.user_name}
+          />
         </div>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -84,7 +83,7 @@ export function NavBar() {
               <Link
                 className={collapse ? "nav-link text" : "nav-link"}
                 onClick={() => handleSignOut()}
-                to="/login"
+                to="/"
               >
                 <FaSignOutAlt /> Sair
               </Link>

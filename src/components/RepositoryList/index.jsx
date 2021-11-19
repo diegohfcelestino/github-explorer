@@ -30,7 +30,9 @@ export function RepositoryList() {
                 <p>Forks feitos : {repository.forks}</p>
                 <p>Branch padrão : {repository.default_branch}</p>
 
-                <a href={repository.html_url}>Acessar repositórios</a>
+                <a href={repository.html_url} target="_blank" rel="noreferrer">
+                  Acessar repositórios
+                </a>
               </li>
             );
           })}

@@ -12,7 +12,7 @@ export function PrivateRoute({ component: Component, ...rest }) {
       {...rest}
       render={(props) => {
         //Renderiza a pagina somente se user existir, caso contrário, redireciona para a página de login
-        return user ? <Component {...props} /> : <Redirect to="/login" />;
+        return user ? <Component {...props} /> : <Redirect to="/" />;
       }}
     />
   );
@@ -23,7 +23,7 @@ const Routes = () => {
     <BrowserRouter>
       <AuthProvider>
         <Switch>
-          <Route path="/login" exact component={Login} />
+          <Route path="/" exact component={Login} />
           <PrivateRoute path="/home" exact component={Home} />
           <PrivateRoute path="/search-users" exact component={SearchUser} />
         </Switch>

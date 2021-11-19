@@ -1,19 +1,28 @@
 .repository-list {
   .title-list {
-    margin: 10%;
+    margin: 8% 0 3% 0;
     text-align: center;
     color: var(--COLOR-TITLE);
   }
 
   .users-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     list-style: none;
     grid-gap: 1.5rem;
     width: 100%;
     position: relative;
 
     .item-list {
+      background: #242424;
+      padding: 8%;
+      border-radius: 4%;
+
+      &:hover {
+        cursor: pointer;
+        border: 3px solid var(--COLOR-SECONDARY);
+      }
+
       h5 {
         color: var(--COLOR-LIST);
         font-size: 16px;

@@ -7,7 +7,7 @@ import "./styles.scss";
 export function Search() {
   const [users, setUsers] = useState([]);
   const { user } = useAuth();
-  const userName = user.user_metadata.user_name;
+  //const userName = user.user_metadata.user_name;
   const [text, setText] = useState("");
 
   useEffect(() => {
