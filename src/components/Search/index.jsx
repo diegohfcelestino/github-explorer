@@ -4,7 +4,7 @@ import { searchUsersList } from "../../services/api";
 import SearchInput from "./SearchInput";
 import "./styles.scss";
 
-export function SearchUser() {
+export function Search() {
   const [users, setUsers] = useState([]);
   const { user } = useAuth();
   const userName = user.user_metadata.user_name;

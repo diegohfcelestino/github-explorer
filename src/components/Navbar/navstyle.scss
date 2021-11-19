@@ -19,8 +19,7 @@
 }
 
 .collapse .navbar-nav .nav-item .nav-link {
-  //color: rgb(46, 42, 42);
-  color: #fff;
+  color: var(--WHITE);
   font-size: 1.1rem;
   transition: color 0.3s;
 
@@ -29,7 +28,7 @@
 
   &:hover {
     // filter: grayscale() brightness(0.3);
-    color: #00d219;
+    color: var(--GREEN);
   }
   &.text {
     font-size: 1.19rem;
@@ -80,7 +79,7 @@
     -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 
-    background: #8257e6;
+    background: var(--PINK);
 
     &:nth-child(1) {
       top: 0px;
@@ -88,7 +87,7 @@
 
     &:nth-child(2) {
       top: 0.6rem;
-      background: #00d219;
+      background: var(--GREEN);
     }
 
     &:nth-child(3) {

@@ -1,21 +1,26 @@
 .repository-list {
-  margin: 10%;
-
-  h1 {
-    margin-bottom: 16px;
+  .title-list {
+    margin: 10%;
+    text-align: center;
+    color: var(--COLOR-TITLE);
   }
 
-  ul {
+  .users-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     list-style: none;
+    grid-gap: 1.5rem;
+    width: 100%;
+    position: relative;
 
-    li {
-      & + li {
-        margin-top: 20px;
+    .item-list {
+      h5 {
+        color: var(--COLOR-LIST);
+        font-size: 16px;
       }
-
       p {
         font-size: 14px;
-        color: rgb(145, 136, 136);
+        color: var(--GRAY-SECONDARY);
         margin-top: 8px;
       }
 
@@ -23,7 +28,11 @@
         display: inline-block;
         margin-top: 16px;
         text-decoration: none;
-        color: #8257e6;
+        color: var(--COLOR-SECONDARY);
+
+        &:hover {
+          color: var(--GREEN);
+        }
       }
     }
   }

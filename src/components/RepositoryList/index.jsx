@@ -1,4 +1,3 @@
-import { RepositoryItem } from "../../components/RepositoryItem";
 import { useState, useEffect } from "react";
 import { handleRepositoryList } from "../../services/api";
 import "./repository.scss";
@@ -19,11 +18,20 @@ export function RepositoryList() {
   return (
     <>
       <section className="repository-list">
-        <h1>Lista de repositórios</h1>
-        <ul>
+        <h1 className="title-list">Lista de repositórios</h1>
+        <ul className="users-list">
           {repositories?.map((repository) => {
             return (
-              <RepositoryItem key={repository.name} repository={repository} />
+              <li key={repository.name} className="item-list">
+                <h5>Nome do Repositório: {repository.name}</h5>
+                <p>Descrição: {repository.description}</p>
+                <p>Linguagem: {repository.language}</p>
+                <p>Criado em : {repository.created_at}</p>
+                <p>Forks feitos : {repository.forks}</p>
+                <p>Branch padrão : {repository.default_branch}</p>
+
+                <a href={repository.html_url}>Acessar repositórios</a>
+              </li>
             );
           })}
         </ul>

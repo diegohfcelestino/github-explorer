@@ -7,14 +7,14 @@
 
 :root {
   --WHITE: #ffffff;
-  --GREEN: #1b873f;
-  --PINK: #ff008e;
-  --ORANGE: #ff7a29;
-  --YELLOW: #ffcd1e;
+  --GREEN: #00d219;
+  --PINK: #ff008c;
 
-  --BLACK-PRIMARY: #09090a;
-  --BLACK-SECONDARY: #121214;
-  --BLACK-TERTIARY: #202024;
+  --COLOR-TITLE: #ff7a29;
+  --COLOR-LIST: #af6328;
+
+  --COLOR-PRIMARY: #121214;
+  --COLOR-SECONDARY: #8257e6;
 
   --GRAY-PRIMARY: #8d8d99;
   --GRAY-SECONDARY: #c4c4cc;
@@ -23,29 +23,13 @@
 }
 
 body {
-  font: 16px "Helvetica Neue", Arial, sans-serif;
-  background: #121214;
-  color: white;
+  background: var(--COLOR-PRIMARY);
+  color: var(--WHITE);
 }
 
 .contentWrapper {
   background: #121214;
 
-  max-width: 1200px;
-  height: 100vh;
+  max-width: 900px;
   margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1fr 453px;
-  column-gap: 120px;
-  position: relative;
-}
-
-.contentSigned::before {
-  content: "";
-  height: 100vh;
-  width: 420px;
-  background-size: cover;
-  position: absolute;
-  right: -200px;
 }

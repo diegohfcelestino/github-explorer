@@ -2,6 +2,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Login } from "./pages/Login";
 import { AuthProvider, useAuth } from "./context/Auth";
 import { Home } from "./pages/Home";
+import { SearchUser } from "./pages/SearchUser";
 
 export function PrivateRoute({ component: Component, ...rest }) {
   const { user } = useAuth();
@@ -23,7 +24,8 @@ const Routes = () => {
       <AuthProvider>
         <Switch>
           <Route path="/login" exact component={Login} />
-          <PrivateRoute path="/" exact component={Home} />
+          <PrivateRoute path="/home" exact component={Home} />
+          <PrivateRoute path="/search-users" exact component={SearchUser} />
         </Switch>
       </AuthProvider>
     </BrowserRouter>

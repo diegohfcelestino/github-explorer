@@ -23,7 +23,7 @@ export function NavBar() {
   return (
     <nav
       className="navbar fixed-top navbar-light"
-      style={{ backgroundColor: "rgb(36, 40, 95)" }}
+      style={{ backgroundColor: "#4e14d5" }}
     >
       <div className="container-fluid">
         <button
@@ -72,7 +72,7 @@ export function NavBar() {
               <li className="nav-item">
                 <Link
                   className={collapse ? "nav-link text" : "nav-link"}
-                  to="/pesquisar"
+                  to="/search-users"
                 >
                   Pesquisar
                 </Link>
@@ -84,7 +84,7 @@ export function NavBar() {
               <Link
                 className={collapse ? "nav-link text" : "nav-link"}
                 onClick={() => handleSignOut()}
-                to="/"
+                to="/login"
               >
                 <FaSignOutAlt /> Sair
               </Link>
