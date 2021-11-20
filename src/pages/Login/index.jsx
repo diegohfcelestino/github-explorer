@@ -1,14 +1,12 @@
 import "./login.scss";
 import { supabase } from "../../supabaseClient";
 import { useAuth } from "../../context/Auth";
-import { useHistory } from "react-router";
 //import { useEffect } from "react";
 
 export function RedirectHome() {
   const { user } = useAuth();
-  const history = useHistory();
 
-  if (user) return history.push("/home");
+  if (user) window.location.href = "/home";
 
   return null;
 }

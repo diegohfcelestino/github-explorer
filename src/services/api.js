@@ -16,6 +16,18 @@ export function handleRepositoryList() {
   });
 }
 
+export function searchProfile(userName) {
+  const auth = sessionStorage.getItem("user");
+  const url = `https://api.github.com/users/${auth}`;
+
+  return new Promise((resolve, reject) => {
+    api
+      .get(url)
+      .then((response) => resolve(response.data))
+      .catch((error) => reject(error.response));
+  });
+}
+
 export function searchUsersList(userName) {
   const url = `https://api.github.com/users/${userName}`;
 
