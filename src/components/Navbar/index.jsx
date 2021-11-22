@@ -23,7 +23,7 @@ export function NavBar() {
   return (
     <nav
       className="navbar fixed-top navbar-light"
-      style={{ backgroundColor: "#4e14d5" }}
+      style={{ backgroundColor: "#3d2574" }}
     >
       <div className="container-fluid">
         <button
