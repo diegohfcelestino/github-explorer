@@ -1,5 +1,5 @@
-import "./global.scss";
-import Routes from "./Routes";
+import './global.scss';
+import Routes from './Routes';
 
 function App() {
   return <Routes />;
