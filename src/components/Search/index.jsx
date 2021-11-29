@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { useAuth } from "../../context/Auth";
-import { searchUsersList } from "../../services/api";
-import SearchInput from "./SearchInput";
-import "./styles.scss";
+import React, { useEffect, useState } from 'react';
+import { useAuth } from '../../context/Auth';
+import { searchUsersList } from '../../services/api';
+import SearchInput from './SearchInput';
+import './styles.scss';
 
 export function Search() {
   const [users, setUsers] = useState([]);
   const { user } = useAuth();
   //const userName = user.user_metadata.user_name;
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   useEffect(() => {
     searchUsersList().then((response) => {
       setUsers(response);
     });
-    console.log("user", user);
-    console.log("users", users);
+    console.log('user', user);
+    console.log('users', users);
   }, [users, user]);
 
   return (
