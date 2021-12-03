@@ -1,8 +1,8 @@
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import { Login } from "./pages/Login";
+import { Login } from "./pages/Login/Login";
 import { AuthProvider, useAuth } from "./context/Auth";
-import { Home } from "./pages/Home";
-import { SearchUser } from "./pages/SearchUser";
+import { SearchUser } from "./pages/SearchUser/SearchUser";
+import { Home } from "./pages/Home/Home";
 
 export function PrivateRoute({ component: Component, ...rest }) {
   const { user } = useAuth();

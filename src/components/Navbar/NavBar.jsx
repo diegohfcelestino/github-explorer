@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaSignOutAlt } from "react-icons/fa";
 
-import "./navstyle.scss";
+import "./nav-bar.scss";
 import { useAuth } from "../../context/Auth";
+import { IconLogout } from "../../services/icons";
 
 export function NavBar() {
   const { signOut, user } = useAuth();
@@ -85,7 +85,7 @@ export function NavBar() {
                 onClick={() => handleSignOut()}
                 to="/"
               >
-                <FaSignOutAlt /> Sair
+                <IconLogout /> Sair
               </Link>
             </li>
           </ul>

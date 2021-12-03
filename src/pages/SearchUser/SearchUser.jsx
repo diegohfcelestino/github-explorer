@@ -1,5 +1,5 @@
-import { NavBar } from "../../components/Navbar";
-import { Search } from "../../components/Search";
+import { NavBar } from "../../components/Navbar/NavBar";
+import { Search } from "../../components/Search/Search";
 
 export function SearchUser() {
   return (

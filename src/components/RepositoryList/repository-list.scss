@@ -1,28 +1,3 @@
-.name-profile {
-  margin: 8% 0 3% 0;
-  text-align: center;
-  color: var(--COLOR-TITLE);
-}
-.profile {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  list-style: none;
-  width: 90%;
-  position: relative;
-
-  .image-profile {
-    img {
-      margin: 1rem 0 0 4rem;
-      width: 20rem;
-      border-radius: 50%;
-    }
-  }
-  .description-profile {
-    font-size: 1.2rem !important;
-    color: var(--WHITE);
-  }
-}
-
 .sobreFoto {
   transition: 1s all ease;
 
@@ -33,7 +8,7 @@
 
 .repository-list {
   .title-list {
-    margin: 3% 0 3% 0;
+    margin: 0 0 3% 0;
     text-align: center;
     color: var(--COLOR-TITLE);
   }
