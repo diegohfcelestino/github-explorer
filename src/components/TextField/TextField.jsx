@@ -12,6 +12,9 @@ export function TextField(props) {
         <Form.Group>
           <Form.ControlLabel>{label}</Form.ControlLabel>
           <InputGroup inside>
+            <InputGroup.Addon>
+              <IconSearch />
+            </InputGroup.Addon>
             <Form.Control
               name={name}
               componentClass={textarea ? "textarea" : "input"}
@@ -23,9 +26,6 @@ export function TextField(props) {
               errorMessage={error}
               {...props}
             />
-            <InputGroup.Addon>
-              <IconSearch />
-            </InputGroup.Addon>
           </InputGroup>
         </Form.Group>
       </div>

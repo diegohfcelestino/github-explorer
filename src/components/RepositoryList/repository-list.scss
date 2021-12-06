@@ -8,7 +8,7 @@
 
 .repository-list {
   .title-list {
-    margin: 0 0 3% 0;
+    margin: 0 0 1% 0;
     text-align: center;
     color: var(--COLOR-TITLE);
   }
@@ -23,7 +23,7 @@
 
     .item-list {
       background: #242424;
-      padding: 8%;
+      padding: 5%;
       border-radius: 4%;
 
       &:hover {
@@ -35,6 +35,7 @@
         color: var(--COLOR-LIST);
         font-size: 16px;
       }
+
       p {
         font-size: 14px;
         color: var(--GRAY-SECONDARY);

@@ -10,38 +10,38 @@ import {
   FaUserAlt,
 } from "react-icons/fa";
 
-export const IconLogout = () => {
-  return <FaSignOutAlt />;
+export const IconLogout = (props) => {
+  return <FaSignOutAlt {...props} />;
 };
 
-export const IconSearch = () => {
-  return <FaSearch />;
+export const IconSearch = (props) => {
+  return <FaSearch {...props} />;
 };
 
-export const IconLocalization = () => {
-  return <FaMapMarkerAlt />;
+export const IconLocalization = (props) => {
+  return <FaMapMarkerAlt {...props} />;
 };
 
-export const IconTwitter = () => {
-  return <FaTwitter />;
+export const IconTwitter = (props) => {
+  return <FaTwitter {...props} />;
 };
 
-export const IconRepository = () => {
-  return <FaFileCode />;
+export const IconRepository = (props) => {
+  return <FaFileCode {...props} />;
 };
 
-export const IconFollowing = () => {
-  return <FaUserFriends />;
+export const IconFollowing = (props) => {
+  return <FaUserFriends {...props} />;
 };
 
-export const IconFollowers = () => {
-  return <FaUsers />;
+export const IconFollowers = (props) => {
+  return <FaUsers {...props} />;
 };
 
-export const IconLinkedin = () => {
-  return <FaLinkedinIn />;
+export const IconLinkedin = (props) => {
+  return <FaLinkedinIn {...props} />;
 };
 
-export const IconUser = () => {
-  return <FaUserAlt />;
+export const IconUser = (props) => {
+  return <FaUserAlt {...props} />;
 };

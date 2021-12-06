@@ -1,34 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Form } from "rsuite";
-import { useAuth } from "../../context/Auth";
 import { searchUsersList } from "../../services/api";
 import { TextField } from "../TextField/TextField";
 import "./search.scss";
 
 export function Search() {
-  const [users, setUsers] = useState([]);
-  const { user } = useAuth();
-  //const [displayValue, setDisplayValue] = useState();
-  const userName = user.user_metadata.user_name;
+  const [userName, setUserName] = useState("");
+  const [userData, setUserData] = useState({});
 
   console.log("USUÁRIO", userName);
 
-  // function handleChange(event) {
-  //   setDisplayValue(event.target.value);
-  // }
+  function handleChange(event) {
+    console.log("event", event);
+    setUserName(event);
+  }
 
   // function handleSubmit(event) {
   //   alert("Um nome foi enviado: " + userName);
   //   event.preventDefault();
   // }
-  //const [text, setText] = useState("");
 
   useEffect(() => {
-    searchUsersList().then((response) => {
-      setUsers(response);
+    searchUsersList(userName).then((response) => {
+      setUserData(response);
     });
-    console.log("users", users);
-  }, [users, user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userName]);
 
   return (
     <div className="search">
@@ -38,16 +35,15 @@ export function Search() {
           label="Pesquisar usuário"
           name="users"
           placeholder="Insira o usuário"
+          onChange={handleChange}
         />
       </Form>
       <h1>Usuário</h1>
       <ul className="users-list">
-        {users.map((userName) => (
-          <li key={users.login}>
-            <img src={userName.avatar_url} alt={userName.name} />
-            {userName.email}
-          </li>
-        ))}
+        <li key={userData?.login}>
+          <img src={userData?.avatar_url} alt={userData?.name} />
+          {userData?.email}
+        </li>
       </ul>
     </div>
   );

@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { searchProfile } from "../../services/api";
-import { IconUser } from "../../services/icons";
+import {
+  IconFollowers,
+  IconFollowing,
+  IconLocalization,
+  IconRepository,
+  IconTwitter,
+  IconUser,
+} from "../../services/icons";
 import "./profile.scss";
 
 export function Profile() {
@@ -22,14 +29,47 @@ export function Profile() {
         </div>
         <div className="description-profile">
           <div className="flex">
-            <IconUser style={{ width: 6 }} />
+            <IconUser
+              style={{ width: 30, margin: 4 }}
+              color={"var(--COLOR-SECONDARY)"}
+            />
             <p>Bio: {profile.bio}</p>
           </div>
-          <p>Localização: {profile.location}</p>
-          <p>Twitter: {profile.twitter_username}</p>
-          <p>Repositórios públicos: {profile.public_repos}</p>
-          <p>Seguindo: {profile.following}</p>
-          <p>Seguidores: {profile.followers}</p>
+          <div className="flex">
+            <IconLocalization
+              style={{ width: 25, marginRight: 4 }}
+              color={"var(--COLOR-SECONDARY)"}
+            />
+            <p>Localização: {profile.location}</p>
+          </div>
+          <div className="flex">
+            <IconTwitter
+              style={{ width: 25, marginRight: 4 }}
+              color={"var(--COLOR-SECONDARY)"}
+            />
+            <p>Twitter: {profile.twitter_username}</p>
+          </div>
+          <div className="flex">
+            <IconRepository
+              style={{ width: 25, marginRight: 4 }}
+              color={"var(--COLOR-SECONDARY)"}
+            />
+            <p>Repositórios públicos: {profile.public_repos}</p>
+          </div>
+          <div className="flex">
+            <IconFollowing
+              style={{ width: 25, marginRight: 4 }}
+              color={"var(--COLOR-SECONDARY)"}
+            />
+            <p>Seguindo: {profile.following}</p>
+          </div>
+          <div className="flex">
+            <IconFollowers
+              style={{ width: 25, marginRight: 4 }}
+              color={"var(--COLOR-SECONDARY)"}
+            />
+            <p>Seguidores: {profile.followers}</p>
+          </div>
         </div>
       </div>
     </>
