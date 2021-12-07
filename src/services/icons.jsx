@@ -8,6 +8,7 @@ import {
   FaUsers,
   FaLinkedinIn,
   FaUserAlt,
+  FaLink,
 } from "react-icons/fa";
 
 export const IconLogout = (props) => {
@@ -44,4 +45,7 @@ export const IconLinkedin = (props) => {
 
 export const IconUser = (props) => {
   return <FaUserAlt {...props} />;
+};
+export const IconLink = (props) => {
+  return <FaLink {...props} />;
 };

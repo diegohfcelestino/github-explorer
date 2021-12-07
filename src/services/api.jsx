@@ -40,7 +40,7 @@ export function searchUsersList(userName) {
 }
 
 export function repositoryListUsers(userName) {
-  const url = `https://api.github.com/users/${userName}/repos`;
+  const url = `https://api.github.com/users/${userName}/repos`; //?page=0&per_page=6
 
   return new Promise((resolve, reject) => {
     api

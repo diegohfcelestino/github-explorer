@@ -1,0 +1,22 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  .pagination-button {
+    background-color: var(--WHITE);
+    border: 1px solid var(--COLOR-SECONDARY);
+    width: 1.5rem;
+    margin: 0.1rem;
+
+    &:hover {
+      background-color: var(--GREEN);
+    }
+  }
+}
+
+.select-pagination {
+  background-color: var(--WHITE);
+  border: 1px solid var(--COLOR-SECONDARY);
+  color: var(--COLOR-TITLE);
+}

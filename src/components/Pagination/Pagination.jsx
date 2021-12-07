@@ -1,0 +1,21 @@
+import React from "react";
+import "./pagination.scss";
+
+export function Pagination({ pages, setCurrentPage, currentPage }) {
+  return (
+    <div className="pagination-container">
+      {Array.from(Array(pages), (item, index) => {
+        return (
+          <button
+            style={index === currentPage ? { backgroundColor: "gray" } : null}
+            className="pagination-button"
+            value={index}
+            onClick={(e) => setCurrentPage(Number(e.target.value))}
+          >
+            {index + 1}
+          </button>
+        );
+      })}
+    </div>
+  );
+}

@@ -1,16 +1,40 @@
 .search {
   font-family: sans-serif;
   text-align: center;
-  margin-top: 10%;
-}
+  margin: 4rem;
 
-.users-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  list-style: none;
-  grid-gap: 1.5rem;
-}
+  .name-users {
+    margin: 1rem;
+    text-align: center;
+    color: var(--COLOR-TITLE);
+  }
 
-.users-list img {
-  max-width: 100%;
+  .users-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    list-style: none;
+    grid-gap: 1.5rem;
+
+    .image-profile {
+      a {
+        img {
+          margin: 0 0 0 9rem;
+          width: 12rem;
+          border-radius: 50%;
+        }
+      }
+    }
+    .description-users {
+      font-size: 1rem !important;
+      color: var(--WHITE);
+
+      :first-child {
+        font-size: 0.9rem !important;
+      }
+
+      .flex {
+        display: flex;
+      }
+    }
+  }
 }
