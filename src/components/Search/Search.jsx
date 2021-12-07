@@ -9,6 +9,7 @@ export function Search() {
   const [userData, setUserData] = useState({});
 
   console.log("USUÁRIO", userName);
+  console.log("DADOSUSUARIO", userData);
 
   function handleChange(event) {
     console.log("event", event);
@@ -41,8 +42,10 @@ export function Search() {
       <h1>Usuário</h1>
       <ul className="users-list">
         <li key={userData?.login}>
-          <img src={userData?.avatar_url} alt={userData?.name} />
-          {userData?.email}
+          <a href={userData.html_url} target="_blank" rel="noreferrer">
+            <img src={userData?.avatar_url} alt={userData?.name} />
+            {userData?.email}
+          </a>
         </li>
       </ul>
     </div>
