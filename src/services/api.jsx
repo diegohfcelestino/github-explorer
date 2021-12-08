@@ -6,7 +6,7 @@ export const api = axios.create({
 
 export function handleRepositoryList() {
   const auth = sessionStorage.getItem("user");
-  const url = `https://api.github.com/users/${auth}/repos`; //?sort=language=1 -> utilizado para fazer paginacao
+  const url = `https://api.github.com/users/${auth}/repos`;
 
   return new Promise((resolve, reject) => {
     api
