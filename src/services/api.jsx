@@ -6,7 +6,7 @@ export const api = axios.create({
 
 export function handleRepositoryList() {
   const auth = sessionStorage.getItem("user");
-  const url = `https://api.github.com/users/${auth}/repos`; //?sort=language=1 -> utilizado para fazer paginacao
+  const url = `https://api.github.com/users/${auth}/repos`;
 
   return new Promise((resolve, reject) => {
     api
@@ -40,7 +40,18 @@ export function searchUsersList(userName) {
 }
 
 export function repositoryListUsers(userName) {
-  const url = `https://api.github.com/users/${userName}/repos`; //?page=0&per_page=6
+  const url = `https://api.github.com/users/${userName}/repos`;
+
+  return new Promise((resolve, reject) => {
+    api
+      .get(url)
+      .then((response) => resolve(response.data))
+      .catch((error) => reject(error.response));
+  });
+}
+
+export function listCommitsRepository(userName, name) {
+  const url = `https://api.github.com/repos/${userName}/${name}/commits`;
 
   return new Promise((resolve, reject) => {
     api

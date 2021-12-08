@@ -11,7 +11,7 @@ import {
 import "./profile.scss";
 
 export function Profile() {
-  const [profile, setProfile] = useState([]);
+  const [profile, setProfile] = useState(null);
 
   useEffect(() => {
     searchProfile().then((response) => {
@@ -22,56 +22,67 @@ export function Profile() {
 
   return (
     <>
-      <h1 className="name-profile">{profile.name}</h1>
-      <div className="container profile">
-        <div className="image-profile">
-          <img src={profile.avatar_url} alt="profile" className="sobreFoto" />
-        </div>
-        <div className="description-profile">
-          <div className="flex">
-            <IconUser
-              style={{ width: 30, margin: 4 }}
-              color={"var(--COLOR-SECONDARY)"}
-            />
-            <p>Bio: {profile.bio}</p>
+      {profile ? (
+        <>
+          <h1 className="name-profile">{profile.name}</h1>
+
+          <div className="container profile">
+            <div className="image-profile">
+              <img
+                src={profile.avatar_url}
+                alt="profile"
+                className="sobreFoto"
+              />
+            </div>
+            <div className="description-profile">
+              <div className="flex">
+                <IconUser
+                  style={{ width: 30, margin: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Bio: {profile.bio}</p>
+              </div>
+              <div className="flex">
+                <IconLocalization
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Localização: {profile.location}</p>
+              </div>
+              <div className="flex">
+                <IconTwitter
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Twitter: {profile.twitter_username}</p>
+              </div>
+              <div className="flex">
+                <IconRepository
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Repositórios públicos: {profile.public_repos}</p>
+              </div>
+              <div className="flex">
+                <IconFollowing
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Seguindo: {profile.following}</p>
+              </div>
+              <div className="flex">
+                <IconFollowers
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Seguidores: {profile.followers}</p>
+              </div>
+            </div>
           </div>
-          <div className="flex">
-            <IconLocalization
-              style={{ width: 25, marginRight: 4 }}
-              color={"var(--COLOR-SECONDARY)"}
-            />
-            <p>Localização: {profile.location}</p>
-          </div>
-          <div className="flex">
-            <IconTwitter
-              style={{ width: 25, marginRight: 4 }}
-              color={"var(--COLOR-SECONDARY)"}
-            />
-            <p>Twitter: {profile.twitter_username}</p>
-          </div>
-          <div className="flex">
-            <IconRepository
-              style={{ width: 25, marginRight: 4 }}
-              color={"var(--COLOR-SECONDARY)"}
-            />
-            <p>Repositórios públicos: {profile.public_repos}</p>
-          </div>
-          <div className="flex">
-            <IconFollowing
-              style={{ width: 25, marginRight: 4 }}
-              color={"var(--COLOR-SECONDARY)"}
-            />
-            <p>Seguindo: {profile.following}</p>
-          </div>
-          <div className="flex">
-            <IconFollowers
-              style={{ width: 25, marginRight: 4 }}
-              color={"var(--COLOR-SECONDARY)"}
-            />
-            <p>Seguidores: {profile.followers}</p>
-          </div>
-        </div>
-      </div>
+        </>
+      ) : (
+        <h1 className="name-profile">Falha na tentativa</h1>
+      )}
     </>
   );
 }

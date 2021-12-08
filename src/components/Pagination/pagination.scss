@@ -4,6 +4,7 @@
   margin-bottom: 1rem;
 
   .pagination-button {
+    color: var(--COLOR-SECONDARY);
     background-color: var(--WHITE);
     border: 1px solid var(--COLOR-SECONDARY);
     width: 1.5rem;
@@ -11,7 +12,7 @@
     color: var(--COLOR-SECONDARY);
 
     &:hover {
-      background-color: var(--GREEN);
+      background-color: var(--COLOR-TITLE);
     }
   }
 }
