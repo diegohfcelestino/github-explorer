@@ -29,37 +29,43 @@ export function RepositoryList() {
 
   return (
     <>
-      <div className="repository-list">
-        <h2 className="title-list">Lista de repositórios</h2>
-        <SelectPagination
-          itensPerPage={itensPerPage}
-          setItensPerPage={setItensPerPage}
-        />
-        <ul className="users-list">
-          {currentRepositories?.map((repository) => {
-            return (
-              <li key={repository.name} className="item-list">
-                <h5>Nome do Repositório: {repository.name}</h5>
-                <p>Descrição: {repository.description}</p>
-                <p>Linguagem: {repository.language}</p>
-                <p>Criado em: {repository.created_at}</p>
-                <p>Forks feitos: {repository.forks}</p>
-                <p>Estrelas: {repository.stargazers_count}</p>
-                <p>Branch padrão: {repository.default_branch}</p>
+      {repositories.length ? (
+        <div className="repository-list">
+          <h2 className="title-list">Lista de repositórios</h2>
+          <SelectPagination
+            itensPerPage={itensPerPage}
+            setItensPerPage={setItensPerPage}
+          />
+          <ul className="users-list">
+            {currentRepositories?.map((repository) => {
+              return (
+                <li key={repository.name} className="item-list">
+                  <h5>Nome do Repositório: {repository.name}</h5>
+                  <p>Descrição: {repository.description}</p>
+                  <p>Linguagem: {repository.language}</p>
+                  <p>Criado em: {repository.created_at}</p>
+                  <p>Forks feitos: {repository.forks}</p>
+                  <p>Estrelas: {repository.stargazers_count}</p>
+                  <p>Branch padrão: {repository.default_branch}</p>
 
-                <a href={repository.html_url} target="_blank" rel="noreferrer">
-                  Acessar repositórios
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-        <Pagination
-          pages={pages}
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-        />
-      </div>
+                  <a
+                    href={repository.html_url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Acessar repositórios
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          <Pagination
+            pages={pages}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+          />
+        </div>
+      ) : null}
     </>
   );
 }
