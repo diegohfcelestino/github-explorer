@@ -24,14 +24,14 @@ export function Profile() {
     <>
       {profile ? (
         <>
-          <h1 className="name-profile">{profile.name}</h1>
+          <h2 className="name-profile">{profile.name}</h2>
 
           <div className="container profile">
             <div className="image-profile">
               <img
                 src={profile.avatar_url}
                 alt="profile"
-                className="sobreFoto"
+                className="sobre-foto"
               />
             </div>
             <div className="description-profile">
@@ -81,7 +81,7 @@ export function Profile() {
           </div>
         </>
       ) : (
-        <h1 className="name-profile">Falha na tentativa</h1>
+        <h2 className="name-profile">Falha na requisição</h2>
       )}
     </>
   );

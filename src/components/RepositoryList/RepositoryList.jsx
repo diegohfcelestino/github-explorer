@@ -9,6 +9,7 @@ export function RepositoryList() {
   const [repositories, setRepositories] = useState([]);
   const { user } = useAuth();
   const userName = user.user_metadata.user_name;
+
   const [itensPerPage, setItensPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -31,7 +32,7 @@ export function RepositoryList() {
     <>
       {repositories.length ? (
         <div className="repository-list">
-          <h2 className="title-list">Lista de repositórios</h2>
+          <h3 className="title-list">Lista de repositórios</h3>
           <SelectPagination
             itensPerPage={itensPerPage}
             setItensPerPage={setItensPerPage}

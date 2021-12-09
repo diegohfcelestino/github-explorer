@@ -1,50 +1,41 @@
-.sobreFoto {
-  transition: 1s all ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
 .repository-list {
   .title-list {
-    margin: 0 0 1% 0;
     text-align: center;
-    color: var(--COLOR-TITLE);
+    color: var(--COLOR-SECONDARY);
   }
 
   .users-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     list-style: none;
-    grid-gap: 1.5rem;
+    grid-gap: 1rem;
     width: 100%;
-    position: relative;
 
     .item-list {
       background: #242424;
       padding: 5%;
       border-radius: 4%;
+      transition: 1s all ease;
 
       &:hover {
         cursor: pointer;
         border: 3px solid var(--COLOR-SECONDARY);
+        transform: scale(1.2);
       }
 
       h5 {
         color: var(--COLOR-LIST);
-        font-size: 16px;
+        font-size: 14px;
       }
 
       p {
-        font-size: 14px;
+        font-size: 12px;
         color: var(--GRAY-SECONDARY);
-        margin-top: 8px;
+        margin-top: 5px;
       }
 
       a {
         display: inline-block;
-        margin-top: 16px;
         text-decoration: none;
         color: var(--COLOR-SECONDARY);
 

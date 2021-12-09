@@ -40,8 +40,8 @@ export function ListRepositoryUser({ userName }) {
   return (
     <>
       {currentRepositories.length ? (
-        <div className="repository-list">
-          <h2 className="title-list">Lista de repositórios</h2>
+        <div className="repository-list-user">
+          <h2 className="title-list-user">Lista de repositórios</h2>
           <SelectPagination
             itensPerPage={itensPerPage}
             setItensPerPage={setItensPerPage}

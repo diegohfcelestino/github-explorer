@@ -9,7 +9,7 @@ export function Pagination({ pages, setCurrentPage, currentPage }) {
           <button
             style={
               index === currentPage
-                ? { backgroundColor: "var(--COLOR-TITLE)" }
+                ? { backgroundColor: "var(--COLOR-SECONDARY)" }
                 : null
             }
             className="pagination-button"

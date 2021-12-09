@@ -42,70 +42,72 @@ export function Search({ setUserName }) {
           onChange={handleChange}
         />
       </Form>
-      <h3 className="name-users">{userData?.name}</h3>
       {userData && (
-        <div className="users-list">
-          <div className="image-profile">
-            <a href={userData.html_url} target="_blank" rel="noreferrer">
-              <img
-                className="image-users"
-                src={userData?.avatar_url}
-                alt={userData?.name}
-              />
-            </a>
+        <>
+          <h3 className="name-users">{userData?.name}</h3>
+          <div className="users-list">
+            <div className="image-profile">
+              <a href={userData.html_url} target="_blank" rel="noreferrer">
+                <img
+                  className="image-users"
+                  src={userData?.avatar_url}
+                  alt={userData?.name}
+                />
+              </a>
+            </div>
+            <div className="description-users">
+              <div className="flex">
+                <IconUser
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Bio: {userData?.bio}</p>
+              </div>
+              <div className="flex">
+                <IconLocalization
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Localização: {userData?.location}</p>
+              </div>
+              <div className="flex">
+                <IconTwitter
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Twitter: {userData?.twitter_username}</p>
+              </div>
+              <div className="flex">
+                <IconRepository
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Repositórios públicos: {userData?.public_repos}</p>
+              </div>
+              <div className="flex">
+                <IconFollowing
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Seguindo: {userData?.following}</p>
+              </div>
+              <div className="flex">
+                <IconFollowers
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Seguidores: {userData?.followers}</p>
+              </div>
+              <div className="flex">
+                <IconLink
+                  style={{ width: 25, marginRight: 4 }}
+                  color={"var(--COLOR-SECONDARY)"}
+                />
+                <p>Url: {userData?.html_url}</p>
+              </div>
+            </div>
           </div>
-          <div className="description-users">
-            <div className="flex">
-              <IconUser
-                style={{ width: 25, marginRight: 4 }}
-                color={"var(--COLOR-SECONDARY)"}
-              />
-              <p>Bio: {userData?.bio}</p>
-            </div>
-            <div className="flex">
-              <IconLocalization
-                style={{ width: 25, marginRight: 4 }}
-                color={"var(--COLOR-SECONDARY)"}
-              />
-              <p>Localização: {userData?.location}</p>
-            </div>
-            <div className="flex">
-              <IconTwitter
-                style={{ width: 25, marginRight: 4 }}
-                color={"var(--COLOR-SECONDARY)"}
-              />
-              <p>Twitter: {userData?.twitter_username}</p>
-            </div>
-            <div className="flex">
-              <IconRepository
-                style={{ width: 25, marginRight: 4 }}
-                color={"var(--COLOR-SECONDARY)"}
-              />
-              <p>Repositórios públicos: {userData?.public_repos}</p>
-            </div>
-            <div className="flex">
-              <IconFollowing
-                style={{ width: 25, marginRight: 4 }}
-                color={"var(--COLOR-SECONDARY)"}
-              />
-              <p>Seguindo: {userData?.following}</p>
-            </div>
-            <div className="flex">
-              <IconFollowers
-                style={{ width: 25, marginRight: 4 }}
-                color={"var(--COLOR-SECONDARY)"}
-              />
-              <p>Seguidores: {userData?.followers}</p>
-            </div>
-            <div className="flex">
-              <IconLink
-                style={{ width: 25, marginRight: 4 }}
-                color={"var(--COLOR-SECONDARY)"}
-              />
-              <p>Url: {userData?.html_url}</p>
-            </div>
-          </div>
-        </div>
+        </>
       )}
     </div>
   );
