@@ -1,0 +1,30 @@
+{
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"prettier",
+		"prettier/react"
+	],
+	"plugins": ["react"],
+	"env": {
+	  "browser": true,
+	  "node": true,
+	  "es6": true
+	},
+	"parserOptions": {
+	  "ecmaVersion": 12,
+	  "sourceType": "module",
+	  "ecmaFeatures": {
+		"jsx": true
+	  }
+	},
+	"parser": "babel-eslint",
+	"globals": {
+	  "module": true,
+	  "inject": true
+	},
+	"rules": {
+		"prettier/prettier": "error"
+	}
+  }
+  
