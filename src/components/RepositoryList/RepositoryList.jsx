@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   handleRepositoryList,
   listCommitsRepository,
@@ -8,7 +8,7 @@ import { useAuth } from "../../context/Auth";
 import { Pagination } from "../Pagination/Pagination";
 import { SelectPagination } from "../Pagination/SelectPagination";
 
-export function RepositoryList() {
+export default function RepositoryList() {
   const [repositories, setRepositories] = useState([]);
   const { user } = useAuth();
   const userName = user.user_metadata.user_name;
@@ -21,17 +21,16 @@ export function RepositoryList() {
   const currentRepositories = repositories.slice(startIndex, endIndex);
 
   useEffect(() => {
-    handleRepositoryList().then((response) => {
+    handleRepositoryList().then((repositoryList) => {
       let newResponse = [];
-      // eslint-disable-next-line array-callback-return
-      response.map((item) => {
+      repositoryList.map((item) => {
         listCommitsRepository(userName, item.name).then((res) => {
           item.totalCommits = res.length;
         });
         newResponse.push(item);
       });
-      console.log("segundoResponse", response);
-      setRepositories(response);
+      console.log("segundoResponse", repositoryList);
+      setRepositories(repositoryList);
     });
   }, [userName, user]);
 

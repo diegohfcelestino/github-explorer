@@ -1,5 +1,5 @@
 import './login.scss';
-import { supabase } from '../../supabaseClient';
+import { supabase } from '../../config/supabaseClient';
 import { useAuth } from '../../context/Auth';
 //import { useEffect } from "react";
 

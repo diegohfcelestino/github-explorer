@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 import "./nav-bar.scss";
 import { useAuth } from "../../context/Auth";
 import { IconLogout } from "../../services/icons";
+import { LocalStorage } from "../../services/LocalStorage";
 
-export function NavBar() {
+export const NavBar = () => {
   const { signOut, user } = useAuth();
   const [collapse, setCollapse] = useState(false);
   const userMetadata = user.user_metadata;
 
   async function handleSignOut() {
     //encerra a sessão do usuário e apaga a sessionStorage
-    sessionStorage.removeItem("user");
+    LocalStorage.remove("user");
     await signOut();
   }
 

@@ -10,7 +10,7 @@ import {
 } from "../../services/icons";
 import "./profile.scss";
 
-export function Profile() {
+export default function Profile() {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {

@@ -1,6 +1,4 @@
-import { NavBar } from "../../components/Navbar/NavBar";
-import { Profile } from "../../components/Profile/Profile";
-import { RepositoryList } from "../../components/RepositoryList/RepositoryList";
+import { NavBar, Profile, RepositoryList } from "../../components";
 
 export function Home() {
   return (
