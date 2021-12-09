@@ -8,12 +8,10 @@ export function handleRepositoryList() {
   const auth = sessionStorage.getItem("user");
   const url = `https://api.github.com/users/${auth}/repos?per_page=100`;
 
-  return new Promise((resolve, reject) => {
-    api
-      .get(url)
-      .then((response) => resolve(response.data))
-      .catch((error) => reject(error.response));
-  });
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => { console.error(error) })
 }
 
 export function searchProfile() {
@@ -47,7 +45,7 @@ export function repositoryListUsers(userName) {
     api
       .get(url)
       .then((response) => resolve(response.data))
-      .catch((error) => reject(error.response));
+      .catch((error) => reject(error.response))
   });
 }
 
