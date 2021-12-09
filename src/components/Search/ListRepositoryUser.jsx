@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { listCommitsRepository, repositoryListUsers } from "../../services/api";
 import { Pagination } from "../Pagination/Pagination";
 import { SelectPagination } from "../Pagination/SelectPagination";
@@ -11,7 +11,7 @@ export function ListRepositoryUser({ userName }) {
   const pages = Math.ceil(userRepositories.length / itensPerPage);
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
-  const [currentRepositories, setCurrentRepositories] = useState([]);
+  const currentRepositories = userRepositories.slice(startIndex, endIndex);
 
   useEffect(() => {
     repositoryListUsers(userName).then((response) => {
@@ -26,7 +26,6 @@ export function ListRepositoryUser({ userName }) {
       });
       console.log("segundoResponse", response);
       setUserRepositories(newResponse);
-      setCurrentRepositories(newResponse.slice(startIndex, endIndex));
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userName]);
@@ -41,13 +40,13 @@ export function ListRepositoryUser({ userName }) {
     <>
       {currentRepositories.length ? (
         <div className="repository-list-user">
-          <h2 className="title-list-user">Lista de repositórios</h2>
+          <h3 className="title-list-user">Lista de repositórios</h3>
           <SelectPagination
             itensPerPage={itensPerPage}
             setItensPerPage={setItensPerPage}
           />
           <ul className="users-list">
-            {userRepositories?.map((repository) => {
+            {currentRepositories?.map((repository) => {
               console.log("repository", repository);
               return (
                 <li key={repository.name} className="item-list">

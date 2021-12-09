@@ -7,6 +7,7 @@ export function Pagination({ pages, setCurrentPage, currentPage }) {
       {Array.from(Array(pages), (item, index) => {
         return (
           <button
+            key={index}
             style={
               index === currentPage
                 ? { backgroundColor: "var(--COLOR-SECONDARY)" }
