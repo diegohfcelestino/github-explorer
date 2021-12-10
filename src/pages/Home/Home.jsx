@@ -1,8 +1,9 @@
-import { NavBar, Profile, RepositoryList } from "../../components";
+import React from 'react';
+import { NavBar, Profile, RepositoryList } from '../../components';
 
 export function Home() {
   return (
-    <div className="contentWrapper">
+    <div className='contentWrapper'>
       <NavBar />
       <Profile />
       <RepositoryList />

@@ -1,12 +1,12 @@
-import React from "react";
-import "./pagination.scss";
+import React from 'react';
+import './pagination.scss';
 
 export function SelectPagination({ itensPerPage, setItensPerPage }) {
   return (
-    <div className="pagination-container">
+    <div className='pagination-container'>
       <h6>Itens por página:</h6>
       <select
-        className="select-pagination"
+        className='select-pagination'
         value={itensPerPage}
         onChange={(e) => setItensPerPage(Number(e.target.value))}
       >

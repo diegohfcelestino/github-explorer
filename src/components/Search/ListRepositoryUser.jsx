@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { listCommitsRepository, repositoryListUsers } from "../../services/api";
-import { Pagination } from "../Pagination/Pagination";
-import { SelectPagination } from "../Pagination/SelectPagination";
+import React, { useState, useEffect } from 'react';
+import { listCommitsRepository, repositoryListUsers } from '../../services/api';
+import { Pagination } from '../Pagination/Pagination';
+import { SelectPagination } from '../Pagination/SelectPagination';
 
 export function ListRepositoryUser({ userName }) {
   const [userRepositories, setUserRepositories] = useState([]);
@@ -15,7 +15,7 @@ export function ListRepositoryUser({ userName }) {
 
   useEffect(() => {
     repositoryListUsers(userName).then((response) => {
-      console.log("response", response);
+      console.log('response', response);
       let newResponse = [];
       // eslint-disable-next-line array-callback-return
       response.map((item) => {
@@ -24,32 +24,31 @@ export function ListRepositoryUser({ userName }) {
         });
         newResponse.push(item);
       });
-      console.log("segundoResponse", response);
+      console.log('segundoResponse', response);
       setUserRepositories(newResponse);
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userName]);
 
   useEffect(() => {
     setCurrentPage(0);
   }, [itensPerPage]);
 
-  console.log("currentRepositories", currentRepositories);
+  console.log('currentRepositories', currentRepositories);
 
   return (
     <>
       {currentRepositories.length ? (
-        <div className="repository-list-user">
-          <h3 className="title-list-user">Lista de repositórios</h3>
+        <div className='repository-list-user'>
+          <h3 className='title-list-user'>Lista de repositórios</h3>
           <SelectPagination
             itensPerPage={itensPerPage}
             setItensPerPage={setItensPerPage}
           />
-          <ul className="users-list">
+          <ul className='users-list'>
             {currentRepositories?.map((repository) => {
-              console.log("repository", repository);
+              console.log('repository', repository);
               return (
-                <li key={repository.name} className="item-list">
+                <li key={repository.name} className='item-list'>
                   <h5>Nome do Repositório: {repository.name}</h5>
                   <p>Descrição: {repository.description}</p>
                   <p>Linguagem: {repository.language}</p>
@@ -61,8 +60,8 @@ export function ListRepositoryUser({ userName }) {
 
                   <a
                     href={repository.html_url}
-                    target="_blank"
-                    rel="noreferrer"
+                    target='_blank'
+                    rel='noreferrer'
                   >
                     Acessar repositórios
                   </a>

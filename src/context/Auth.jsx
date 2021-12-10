@@ -1,6 +1,6 @@
-import React, { useContext, useState, useEffect } from "react";
-import { supabase } from "../config/supabaseClient";
-import { LocalStorage } from "../services/LocalStorage";
+import React, { useContext, useState, useEffect } from 'react';
+import { supabase } from '../config/supabaseClient';
+import { LocalStorage } from '../services/LocalStorage';
 
 const AuthContext = React.createContext();
 
@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
     const session = supabase.auth.session();
 
     setUser(session?.user ?? null);
-    LocalStorage.set("user", session?.user.user_metadata.user_name);
+    LocalStorage.set('user', session?.user.user_metadata.user_name);
     setLoading(false);
 
     const { data: listener } = supabase.auth.onAuthStateChange(

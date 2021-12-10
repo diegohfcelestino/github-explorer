@@ -1,21 +1,23 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: "https://api.github.com/users/",
+  baseURL: 'https://api.github.com/users/',
 });
 
 export function handleRepositoryList() {
-  const auth = sessionStorage.getItem("user");
+  const auth = sessionStorage.getItem('user');
   const url = `https://api.github.com/users/${auth}/repos?per_page=100`;
 
   return fetch(url)
     .then((response) => response.json())
     .then((data) => data)
-    .catch((error) => { console.error(error) })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
 export function searchProfile() {
-  const auth = sessionStorage.getItem("user");
+  const auth = sessionStorage.getItem('user');
   const url = `https://api.github.com/users/${auth}`;
 
   return new Promise((resolve, reject) => {
@@ -45,7 +47,7 @@ export function repositoryListUsers(userName) {
     api
       .get(url)
       .then((response) => resolve(response.data))
-      .catch((error) => reject(error.response))
+      .catch((error) => reject(error.response));
   });
 }
 

@@ -1,8 +1,9 @@
+import React from 'react';
 import './global.scss';
 import Routes from './config/Routes';
 
 function App() {
-	return <Routes />;
+  return <Routes />;
 }
 
 export default App;

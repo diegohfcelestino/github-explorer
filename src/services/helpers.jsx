@@ -1,17 +1,18 @@
-import swal from "sweetalert";
+import React from 'react';
+import swal from 'sweetalert';
 
 export const handleError = (error, action) => {
   if (!error) {
     return swal(
-      "Algo de errado aconteceu!",
-      "Verifique sua conexão de internet.",
-      "error"
+      'Algo de errado aconteceu!',
+      'Verifique sua conexão de internet.',
+      'error'
     );
   }
 
-  const { data = "" } = error;
-  let message = "";
-  let status = "";
+  const { data = '' } = error;
+  let message = '';
+  let status = '';
 
   if (data) {
     status = data.status;
@@ -20,14 +21,14 @@ export const handleError = (error, action) => {
       (key) => data.errors[key]
     );
     // eslint-disable-next-line no-useless-escape
-    message = `${status} - ${errorMessage.join(",").replace(/\,/, ", ")}`;
+    message = `${status} - ${errorMessage.join(',').replace(/\,/, ', ')}`;
   } else {
     status = error.status;
   }
 
   switch (status) {
     case 400:
-      message = message ? message : "Verifique os dados enviados";
+      message = message ? message : 'Verifique os dados enviados';
       break;
     case 409:
       break;
@@ -35,16 +36,16 @@ export const handleError = (error, action) => {
       logout();
       break;
     case 404:
-      console.log("Não encontrado");
+      console.log('Não encontrado');
       break;
     case 500:
-      message = "Erro no servidor";
+      message = 'Erro no servidor';
       break;
     default:
-      message = "Erro desconhecido!";
+      message = 'Erro desconhecido!';
   }
 
-  if (message) swal("Algo de errado aconteceu!", message, "error");
+  if (message) swal('Algo de errado aconteceu!', message, 'error');
 
   if (action) action();
 };
@@ -53,7 +54,7 @@ export function handleErrorForm(method, error) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   if (!error?.response) error = { response: { data: false, status: false } };
   const { data, status } = error?.response;
-  let message = "";
+  let message = '';
 
   if (data) {
     const errorMessage = Object.keys(data.errors).map(
@@ -61,30 +62,30 @@ export function handleErrorForm(method, error) {
     );
     // eslint-disable-next-line no-useless-escape
     message =
-      typeof errorMessage[0] === "object"
+      typeof errorMessage[0] === 'object'
         ? errorMessage[0][0]
         : // eslint-disable-next-line no-useless-escape
-          errorMessage.join(",").replace(/\,/, ", ");
+          errorMessage.join(',').replace(/\,/, ', ');
   }
 
   switch (status) {
     case 400:
-      message = message ?? "Verifique os dados enviados";
+      message = message ?? 'Verifique os dados enviados';
       break;
     case 401:
       logout();
       break;
     case 404:
-      message = "Nenhum registro encontrado!";
+      message = 'Nenhum registro encontrado!';
       break;
     case 409:
-      message = message ?? "Conflito na atualização do registro!";
+      message = message ?? 'Conflito na atualização do registro!';
       break;
     case 500:
-      message = message ?? "Erro no servidor";
+      message = message ?? 'Erro no servidor';
       break;
     default:
-      message = "Erro desconhecido!";
+      message = 'Erro desconhecido!';
       break;
   }
 
@@ -112,5 +113,5 @@ export default function removerAcentos(newStringComAcento) {
 }
 
 export function removerAcentosEspacos(newStringComAcentoEspaco) {
-  return newStringComAcentoEspaco.normalize("NFD").replace(/[^a-zA-Zs]/g, "");
+  return newStringComAcentoEspaco.normalize('NFD').replace(/[^a-zA-Zs]/g, '');
 }

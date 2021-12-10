@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   FaSignOutAlt,
   FaSearch,
@@ -9,7 +10,7 @@ import {
   FaLinkedinIn,
   FaUserAlt,
   FaLink,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 export const IconLogout = (props) => {
   return <FaSignOutAlt {...props} />;

@@ -1,10 +1,5 @@
+import { NavBar } from './Navbar/NavBar';
+import Profile from './Profile/Profile';
+import RepositoryList from './RepositoryList/RepositoryList';
 
-import { NavBar } from "./Navbar/NavBar";
-import Profile from "./Profile/Profile";
-import RepositoryList from "./RepositoryList/RepositoryList";
-
-export {
-	NavBar,
-	Profile,
-	RepositoryList
-}
+export { NavBar, Profile, RepositoryList };
