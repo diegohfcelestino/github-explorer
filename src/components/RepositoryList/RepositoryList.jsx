@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   handleRepositoryList,
   listCommitsRepository,
-} from "../../services/api";
-import "./repository-list.scss";
-import { useAuth } from "../../context/Auth";
-import { Pagination } from "../Pagination/Pagination";
-import { SelectPagination } from "../Pagination/SelectPagination";
+} from '../../services/api';
+import './repository-list.scss';
+import { useAuth } from '../../context/Auth';
+import { Pagination } from '../Pagination/Pagination';
+import { SelectPagination } from '../Pagination/SelectPagination';
 
 export default function RepositoryList() {
   const [repositories, setRepositories] = useState([]);
@@ -23,13 +23,14 @@ export default function RepositoryList() {
   useEffect(() => {
     handleRepositoryList().then((repositoryList) => {
       let newResponse = [];
+      // eslint-disable-next-line array-callback-return
       repositoryList.map((item) => {
         listCommitsRepository(userName, item.name).then((res) => {
           item.totalCommits = res.length;
         });
         newResponse.push(item);
       });
-      console.log("segundoResponse", repositoryList);
+      console.log('segundoResponse', repositoryList);
       setRepositories(repositoryList);
     });
   }, [userName, user]);
@@ -41,16 +42,16 @@ export default function RepositoryList() {
   return (
     <>
       {repositories.length ? (
-        <div className="repository-list">
-          <h3 className="title-list">Lista de repositórios</h3>
+        <div className='repository-list'>
+          <h3 className='title-list'>Lista de repositórios</h3>
           <SelectPagination
             itensPerPage={itensPerPage}
             setItensPerPage={setItensPerPage}
           />
-          <ul className="users-list">
+          <ul className='users-list'>
             {currentRepositories?.map((repository) => {
               return (
-                <li key={repository.name} className="item-list">
+                <li key={repository.name} className='item-list'>
                   <h5>Nome do Repositório: {repository.name}</h5>
                   <p>Descrição: {repository.description}</p>
                   <p>Linguagem: {repository.language}</p>
@@ -62,8 +63,8 @@ export default function RepositoryList() {
 
                   <a
                     href={repository.html_url}
-                    target="_blank"
-                    rel="noreferrer"
+                    target='_blank'
+                    rel='noreferrer'
                   >
                     Acessar repositórios
                   </a>

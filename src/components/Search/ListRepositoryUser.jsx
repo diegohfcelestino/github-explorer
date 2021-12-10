@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { listCommitsRepository, repositoryListUsers } from "../../services/api";
 import { Pagination } from "../Pagination/Pagination";
 import { SelectPagination } from "../Pagination/SelectPagination";
