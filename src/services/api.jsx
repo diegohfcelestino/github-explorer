@@ -5,7 +5,7 @@ export const api = axios.create({
 });
 
 export function handleRepositoryList() {
-  const auth = sessionStorage.getItem('user');
+  const auth = localStorage.getItem('user');
   const url = `https://api.github.com/users/${auth}/repos?per_page=100`;
 
   return fetch(url)
@@ -17,7 +17,7 @@ export function handleRepositoryList() {
 }
 
 export function searchProfile() {
-  const auth = sessionStorage.getItem('user');
+  const auth = localStorage.getItem('user');
   const url = `https://api.github.com/users/${auth}`;
 
   return new Promise((resolve, reject) => {
