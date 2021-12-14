@@ -4,34 +4,48 @@ export const api = axios.create({
   baseURL: 'https://api.github.com/users/',
 });
 
-export function handleRepositoryList() {
+export async function handleRepositoryList() {
   const auth = localStorage.getItem('user');
-  const url = `https://api.github.com/users/${auth}/repos?per_page=100`;
+  const url = `https://api.github.com/users/${auth}/repos?per_page=2`;
 
-  return fetch(url)
-    .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => {
-      console.error(error);
-    });
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-export function searchProfile() {
+export async function searchProfile() {
   const auth = localStorage.getItem('user');
   const url = `https://api.github.com/users/${auth}`;
 
-  return new Promise((resolve, reject) => {
-    api
-      .get(url)
-      .then((response) => resolve(response.data))
-      .catch((error) => reject(error.response));
-  });
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-export function searchUsersList(userName) {
+export async function searchUsersList(userName) {
   const url = `https://api.github.com/users/${userName}`;
   //const url = `https://api.github.com/search/users?q=${userName}`; para pesquisar varios usuários
 
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function repositoryListUsers(userName) {
+  const url = `https://api.github.com/users/${userName}/repos?per_page=3`;
+
   return new Promise((resolve, reject) => {
     api
       .get(url)
@@ -40,37 +54,28 @@ export function searchUsersList(userName) {
   });
 }
 
-export function repositoryListUsers(userName) {
-  const url = `https://api.github.com/users/${userName}/repos?per_page=100`;
-
-  return new Promise((resolve, reject) => {
-    api
-      .get(url)
-      .then((response) => resolve(response.data))
-      .catch((error) => reject(error.response));
-  });
-}
-
-export function listCommitsRepository(userName, repo) {
+export async function listCommitsRepository(userName, repo) {
   const url = `https://api.github.com/repos/${userName}/${repo}/commits`;
 
-  return new Promise((resolve, reject) => {
-    api
-      .get(url)
-      .then((response) => resolve(response.data))
-      .catch((error) => reject(error.response));
-  });
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-export function searchOrgsList(userName) {
+export async function searchOrgsList(userName) {
   const url = `https://api.github.com/users/${userName}/orgs`;
 
-  return new Promise((resolve, reject) => {
-    api
-      .get(url)
-      .then((response) => resolve(response.data))
-      .catch((error) => reject(error.response));
-  });
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export function followersList(userName) {
