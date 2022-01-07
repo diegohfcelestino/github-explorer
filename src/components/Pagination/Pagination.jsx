@@ -3,7 +3,7 @@ import './pagination.scss';
 
 export function Pagination({ pages, setCurrentPage, currentPage }) {
   return (
-    <div className='pagination-container' data-testid="pagination">
+    <div className='pagination-container'>
       {Array.from(Array(pages), (item, index) => {
         return (
           <button

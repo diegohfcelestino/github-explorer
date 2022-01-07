@@ -5,10 +5,7 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier"],
   "env": {
     "browser": true,
     "node": true,
@@ -36,6 +33,6 @@
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
     "react/prop-types": "off",
-    "react/react-in-jsx-scope": "0"
+    "react/react-in-jsx-scope": 0
   }
 }
