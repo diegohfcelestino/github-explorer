@@ -5,7 +5,10 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "plugins": ["react", "prettier"],
+  "plugins": [
+    "react",
+    "prettier"
+  ],
   "env": {
     "browser": true,
     "node": true,
@@ -24,9 +27,15 @@
     "inject": true
   },
   "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "0"
   }
 }
